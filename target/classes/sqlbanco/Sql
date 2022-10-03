@@ -1,0 +1,38 @@
+*-----------------------------------------------------------------------------*
+//DATABASE PROJETO-JSP
+CREATE DATABASE "projeto-jsp"
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Portuguese_Brazil.1252'
+    LC_CTYPE = 'Portuguese_Brazil.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+// TABELA TB_LOGINS
+	//CRIAÇÃO
+	CREATE TABLE tb_logins(
+	usuario character varying(255) UNIQUE,
+	senha character varying(255)
+	)
+	
+	//SQL
+	CREATE TABLE IF NOT EXISTS public.tb_logins
+	(
+    usuario character varying(255) COLLATE pg_catalog."default",
+    senha character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT tb_logins_usuario_key UNIQUE (usuario)
+	)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.tb_logins
+    OWNER to postgres;
+
+//INSERT TB_LOGINS
+INSERT INTO tb_logins(usuario, senha) VALUES('admin', 'admin')
+
+//SELECT TB_LOGINS
+SELECT *
+FROM tb_logins
+*-----------------------------------------------------------------------------------*    
