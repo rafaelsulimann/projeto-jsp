@@ -6,6 +6,13 @@
   <packaging>war</packaging>
   <name>projeto-jsp</name>
   <description>Projeto de jsp com servlet</description>
+  <dependencies>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.5.0</version>
+    </dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>
